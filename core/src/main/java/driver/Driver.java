@@ -15,7 +15,7 @@ public class Driver {
 
     private Driver() {}
 
-    public static Driver getInstance(String value) {
+    public static Driver getInstance() {
         if (instance == null) {
             synchronized (Driver.class) {
                 if (instance == null) {
@@ -27,13 +27,10 @@ public class Driver {
     }
     //endregion
 
-    private static String ChromeDriverLocation = System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-    private static String FirefoxDriverLocation = System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
-
     private ChromeOptions ChromeBrowserOptions()
     {
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addExtensions(new File(ChromeDriverLocation));
         options.addArguments("test-type");
         options.addArguments("disable-infobars");
         options.addArguments("start-maximized");
@@ -47,10 +44,9 @@ public class Driver {
 
     private FirefoxOptions FirefoxBrowserOptions()
     {
+        System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
         FirefoxOptions options = new FirefoxOptions();
-        options.setBinary("c:/Program Files/Nightly/firefox.exe");
-        options.addArguments("-console");
-        options.addPreference("browser.cache.disk.enable", false);
+        options.setBinary("C:\\Program Files\\Mozilla Firefox\\firefox.exe"); //location of FF exe
         return options;
     }
 
@@ -64,6 +60,7 @@ public class Driver {
                 break;
             case Firefox:
                 driver = new FirefoxDriver(FirefoxBrowserOptions());
+                driver.manage().window().maximize();
                 break;
             default:
                 driver = new ChromeDriver(ChromeBrowserOptions());
