@@ -1,5 +1,6 @@
 package temp_test;
 
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import temp_page.TempPage;
 
@@ -11,6 +12,12 @@ public class TempTest {
     public void someTest()
     {
         tempPage.navigateTo("https://www.google.com/");
+    }
+
+    @AfterTest
+    public void tearDown()
+    {
+        tempPage.closeBrowser();
     }
 
 }

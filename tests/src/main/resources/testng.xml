@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Syllabus" parallel="false">
+    <test name="someTest">
+        <classes>
+            <class name="temp_test.TempTest"/>
+        </classes>
+    </test>
+</suite>

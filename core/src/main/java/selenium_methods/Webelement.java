@@ -11,4 +11,9 @@ public class Webelement {
     {
         driver.navigate().to(url);
     }
+
+    public void close()
+    {
+        driver.close();
+    }
 }
