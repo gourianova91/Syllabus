@@ -1,7 +1,5 @@
 package config;
 
-import driver.Driver;
-
 public class DriverSettings {
 
     //region Singleton driver initialization

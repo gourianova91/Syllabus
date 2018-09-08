@@ -48,28 +48,14 @@ public class Driver {
         return options;
     }
 
-    public WebDriver getBrowser(Browser browser)
-    {
-        WebDriver driver;
-        switch(browser)
-        {
-            case Chrome:
-                driver = new ChromeDriver(ChromeBrowserOptions());
-                break;
-            case Firefox:
-                driver = new FirefoxDriver(FirefoxBrowserOptions());
-                driver.manage().window().maximize();
-                break;
-            default:
-                driver = new ChromeDriver(ChromeBrowserOptions());
-                break;
+    public WebDriver getBrowser(String browser) {
+        WebDriver driver = null;
+        if (browser.equals("Chrome")) {
+            driver = new ChromeDriver(ChromeBrowserOptions());
+        } else if (browser.equals("Firefox")) {
+            driver = new FirefoxDriver(FirefoxBrowserOptions());
+            driver.manage().window().maximize();
         }
         return driver;
-    }
-
-    public enum Browser
-    {
-        Chrome,
-        Firefox
     }
 }
