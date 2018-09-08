@@ -12,14 +12,4 @@ public class Browser {
         _browserName = name;
         _defaultBrowser = DriverSettings.getInstance().browser;
     }
-
-
-    public enum w1{
-        Res
-    }
-
-    public void enumToString()
-    {
-        w1.Res.name();
-    }
 }
