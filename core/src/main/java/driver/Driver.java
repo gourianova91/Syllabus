@@ -1,15 +1,20 @@
 package driver;
 
+import events.Events;
+import org.omg.CORBA.SystemException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 public class Driver {
 
     //region Singleton driver initialization
     private static volatile Driver instance;
+
+    private WebDriver currentDriver;
 
     private Driver() {}
 
@@ -48,14 +53,26 @@ public class Driver {
         return options;
     }
 
-    public WebDriver getBrowser(String browser) {
-        WebDriver driver = null;
+    public EventFiringWebDriver getBrowser(String browser) {
+        currentDriver = null;
         if (browser.equals("Chrome")) {
-            driver = new ChromeDriver(ChromeBrowserOptions());
+            currentDriver = new ChromeDriver(ChromeBrowserOptions());
         } else if (browser.equals("Firefox")) {
-            driver = new FirefoxDriver(FirefoxBrowserOptions());
-            driver.manage().window().maximize();
+            currentDriver = new FirefoxDriver(FirefoxBrowserOptions());
+            currentDriver.manage().window().maximize();
         }
-        return driver;
+        EventFiringWebDriver eDriver = new EventFiringWebDriver(currentDriver);
+        Events events = new Events();
+        eDriver.register(events);
+        return eDriver;
+    }
+
+    public void destroyDriver()
+    {
+        if (instance != null)
+        {
+            currentDriver.quit();
+            instance = null;
+        }
     }
 }
