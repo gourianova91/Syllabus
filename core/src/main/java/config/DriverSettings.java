@@ -20,4 +20,5 @@ public class DriverSettings {
     //endregion
 
     public String browser = "Chrome";
+    public int ajaxWait = 60;
 }

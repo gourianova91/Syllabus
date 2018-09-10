@@ -11,7 +11,7 @@ public class TempTest {
     @Test
     public void someTest()
     {
-        tempPage.navigateTo("https://www.google.com/");
+        tempPage.navigateTo("https://www.onliner.by/");
     }
 
     @AfterTest
