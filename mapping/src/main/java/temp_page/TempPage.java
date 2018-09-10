@@ -11,8 +11,4 @@ public class TempPage {
         page.goTo(url);
     }
 
-    public void closeBrowser()
-    {
-        page.close();
-    }
 }

@@ -1,23 +1,14 @@
 package temp_test;
 
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
-import temp_page.TempPage;
+import setup.SetUp;
 
-public class TempTest {
-
-    TempPage tempPage = new TempPage();
+public class TempTest extends SetUp {
 
     @Test
     public void someTest()
     {
         tempPage.navigateTo("https://www.onliner.by/");
-    }
-
-    @AfterTest
-    public void tearDown()
-    {
-        tempPage.closeBrowser();
     }
 
 }

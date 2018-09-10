@@ -83,6 +83,7 @@ public class Driver {
     {
         if (instance != null)
         {
+            currentDriver.close();
             currentDriver.quit();
             instance = null;
         }
