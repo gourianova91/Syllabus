@@ -32,7 +32,7 @@ public class Driver {
 
     private ChromeOptions ChromeBrowserOptions()
     {
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("test-type");
         options.addArguments("disable-infobars");
@@ -47,7 +47,7 @@ public class Driver {
 
     private FirefoxOptions FirefoxBrowserOptions()
     {
-        System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
         FirefoxOptions options = new FirefoxOptions();
         options.setBinary("C:\\Program Files\\Mozilla Firefox\\firefox.exe"); //location of FF exe
         return options;

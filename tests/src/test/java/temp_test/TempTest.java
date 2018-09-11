@@ -10,5 +10,4 @@ public class TempTest extends SetUp {
     {
         tempPage.navigateTo("https://www.onliner.by/");
     }
-
 }
