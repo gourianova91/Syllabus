@@ -25,5 +25,28 @@
             <artifactId>mapping</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+            <dependency>
+                <groupId>ru.yandex.qatools.allure</groupId>
+                <artifactId>allure-testng-adaptor</artifactId>
+                <version>1.5.4</version>
+            </dependency>
     </dependencies>
+    <reporting>
+        <excludeDefaults>true</excludeDefaults>
+        <plugins>
+            <plugin>
+                <groupId>ru.yandex.qatools.allure</groupId>
+                <artifactId>allure-maven-plugin</artifactId>
+                <version>2.6</version>
+            </plugin>
+        </plugins>
+    </reporting>
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
 </project>
