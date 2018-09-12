@@ -26,6 +26,3 @@ hs_err_pid*
 */target/*
 */target/**
 target/
-
-#Allure
-*/allure-results/
