@@ -3,7 +3,7 @@
     <listeners>
         <listener class-name="listeners.TestListener"/>
     </listeners>
-    <test name="TempTest"   >
+    <test name="TempTest">
         <packages>
             <package name="temp_test" />
         </packages>
