@@ -1,0 +1,25 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-RO4UOMO",
+    "children" : [ {
+      "name" : "26320@DESKTOP-RO4UOMO.main(1)",
+      "children" : [ {
+        "name" : "someTest",
+        "uid" : "b384d0285bba5e40",
+        "parentUid" : "d6c4b6adea9e12ed67a8c674152cf960",
+        "status" : "passed",
+        "time" : {
+          "start" : 1536736437099,
+          "stop" : 1536736443034,
+          "duration" : 5935
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "d6c4b6adea9e12ed67a8c674152cf960"
+    } ],
+    "uid" : "4cb3e2e81fe2d994b8ae5544d27eca45"
+  } ]
+}

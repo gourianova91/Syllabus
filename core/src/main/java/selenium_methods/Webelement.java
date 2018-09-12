@@ -1,6 +1,7 @@
 package selenium_methods;
 
 import driver.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import config.DriverSettings;
 
@@ -13,8 +14,8 @@ public class Webelement {
         driver.navigate().to(url);
     }
 
-    public void close()
+    public void click(By locator)
     {
-        driver.close();
+        driver.findElement(locator);
     }
 }

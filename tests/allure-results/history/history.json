@@ -1,0 +1,22 @@
+{
+  "e92fb5eadbe38b6eca6ce1c8d22998d5" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "83df50f888a31756",
+      "reportUrl" : "http://localhost:8080/job/Syllabus/3/allure/#testresult/83df50f888a31756",
+      "status" : "passed",
+      "time" : {
+        "start" : 1536736069989,
+        "stop" : 1536736075901,
+        "duration" : 5912
+      }
+    } ]
+  }
+}

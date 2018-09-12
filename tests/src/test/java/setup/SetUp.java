@@ -2,6 +2,7 @@ package setup;
 
 import driver.Driver;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import temp_page.TempPage;
 
@@ -19,5 +20,11 @@ public class SetUp {
     public void tearDownSuite()
     {
         Driver.getInstance().destroyDriver();
+    }
+
+    @AfterTest
+    public void tearDownTest()
+    {
+        //takes screenshot if test failed
     }
 }
