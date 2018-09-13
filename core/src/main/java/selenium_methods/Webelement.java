@@ -7,7 +7,7 @@ import config.DriverSettings;
 
 public class Webelement {
 
-    WebDriver driver = Driver.getInstance().getBrowser(DriverSettings.getInstance().browser);
+    WebDriver driver = Driver.getInstance().currentDriver;
 
     public void goTo(String url)
     {

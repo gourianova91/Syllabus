@@ -38,9 +38,10 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
     }
 
     public void takeScreenShot(String methodName) {
-        //Screenshot viewable area////////////////
+        //////////Screenshot viewable area////////////////
+
         //get the driver
-       /* File scrFile = ((TakesScreenshot) Driver.getInstance().getDriver()).getScreenshotAs(OutputType.FILE);
+        /*File scrFile = ((TakesScreenshot) Driver.getInstance().getDriver()).getScreenshotAs(OutputType.FILE);
         //The below method will save the screen shot in drive with test method name
         try {
             //FileUtils.copyFile(scrFile, getSreenShotMethodImageFile);
@@ -48,7 +49,9 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
         } catch (IOException e) {
             e.printStackTrace();
         }*/
-        ///////////////////////////////////////
+
+        //////////////////////////////////////////////
+
         //Take Screenshot of entire page by AShot
         Screenshot entirePageScreenShot = new AShot().
                 shootingStrategy(ShootingStrategies.viewportPasting(100)).takeScreenshot(Driver.getInstance().getDriver());
@@ -58,6 +61,8 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        //////////////////////////////////////////////
     }
 
     @Override

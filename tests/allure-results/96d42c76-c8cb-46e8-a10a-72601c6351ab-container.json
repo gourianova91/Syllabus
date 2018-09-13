@@ -1,0 +1,1 @@
+{"uuid":"96d42c76-c8cb-46e8-a10a-72601c6351ab","name":"temp_test.TempTest","start":1536827018843,"stop":1536827039555,"children":["fdb32d07-d066-472e-b605-2159e8dcb535"],"afters":[{"name":"tearDownSuite","status":"passed","stage":"finished","description":"","start":1536827036369,"stop":1536827039555}]}

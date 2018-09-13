@@ -1,0 +1,1 @@
+{"uuid":"fdb32d07-d066-472e-b605-2159e8dcb535","name":"Command line test","start":1536827018850,"stop":1536827035576,"children":["12ac51f5-ab47-4bc2-a64e-1a5b77c458cb"],"afters":[{"name":"tearDownTest","status":"passed","stage":"finished","description":"","start":1536827035491,"stop":1536827035493}]}

@@ -14,7 +14,7 @@ public class Driver {
     //region Singleton driver initialization
     private static volatile Driver instance;
 
-    public WebDriver currentDriver;
+    public WebDriver currentDriver = getDriver();
 
     private Driver() {}
 
@@ -62,7 +62,7 @@ public class Driver {
         return currentDriver;
     }
 
-    public WebDriver getBrowser(String browser) {
+    private WebDriver getBrowser(String browser) {
         currentDriver = null;
         if (browser.equals("Chrome")) {
             currentDriver = new ChromeDriver(ChromeBrowserOptions());

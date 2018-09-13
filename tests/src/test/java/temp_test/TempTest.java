@@ -11,10 +11,4 @@ public class TempTest extends SetUp {
         tempPage.navigateTo("https://www.onliner.by/");
     }
 
-    @Test
-    public void failedTest()
-    {
-        tempPage.navigateTo("https://www.onliner.by");
-        tempPage.searchIn();
-    }
 }
