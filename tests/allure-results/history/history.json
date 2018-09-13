@@ -4,11 +4,20 @@
       "failed" : 0,
       "broken" : 0,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 2,
       "unknown" : 0,
-      "total" : 1
+      "total" : 2
     },
     "items" : [ {
+      "uid" : "b384d0285bba5e40",
+      "reportUrl" : "http://localhost:8080/job/Syllabus/4/allure/#testresult/b384d0285bba5e40",
+      "status" : "passed",
+      "time" : {
+        "start" : 1536736437099,
+        "stop" : 1536736443034,
+        "duration" : 5935
+      }
+    }, {
       "uid" : "83df50f888a31756",
       "reportUrl" : "http://localhost:8080/job/Syllabus/3/allure/#testresult/83df50f888a31756",
       "status" : "passed",

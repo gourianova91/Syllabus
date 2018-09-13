@@ -1,4 +1,11 @@
 [ {
+  "buildOrder" : 5,
+  "reportUrl" : "http://localhost:8080/job/Syllabus/5/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "duration" : 9728506
+  }
+}, {
   "buildOrder" : 4,
   "reportUrl" : "http://localhost:8080/job/Syllabus/4/allure",
   "reportName" : "AllureReport",

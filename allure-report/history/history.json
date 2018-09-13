@@ -4,11 +4,20 @@
       "failed" : 0,
       "broken" : 0,
       "skipped" : 0,
-      "passed" : 2,
+      "passed" : 3,
       "unknown" : 0,
-      "total" : 2
+      "total" : 3
     },
     "items" : [ {
+      "uid" : "1768935d4aae4046",
+      "reportUrl" : "http://localhost:8080/job/Syllabus/5/allure/#testresult/1768935d4aae4046",
+      "status" : "passed",
+      "time" : {
+        "start" : 1536837296518,
+        "stop" : 1536837311021,
+        "duration" : 14503
+      }
+    }, {
       "uid" : "b384d0285bba5e40",
       "reportUrl" : "http://localhost:8080/job/Syllabus/4/allure/#testresult/b384d0285bba5e40",
       "status" : "passed",
@@ -25,6 +34,26 @@
         "start" : 1536736069989,
         "stop" : 1536736075901,
         "duration" : 5912
+      }
+    } ]
+  },
+  "a36416bbec65c050c5c29805ec4c6b11" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c931fe30a4ab5f06",
+      "reportUrl" : "http://localhost:8080/job/Syllabus/5/allure/#testresult/c931fe30a4ab5f06",
+      "status" : "passed",
+      "time" : {
+        "start" : 1536827582515,
+        "stop" : 1536827591661,
+        "duration" : 9146
       }
     } ]
   }

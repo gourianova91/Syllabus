@@ -62,6 +62,18 @@ public class Driver {
         return currentDriver;
     }
 
+    public static Boolean isDriverRunning()
+    {
+        if (instance == null)
+        {
+            return false;
+        }
+        else
+        {
+            return instance.currentDriver != null;
+        }
+    }
+
     private WebDriver getBrowser(String browser) {
         currentDriver = null;
         if (browser.equals("Chrome")) {

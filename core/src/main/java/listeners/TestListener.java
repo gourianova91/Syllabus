@@ -1,6 +1,8 @@
 package listeners;
 
 import driver.Driver;
+import io.qameta.allure.Allure;
+import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -10,13 +12,14 @@ import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 import javax.imageio.ImageIO;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 
 public class TestListener implements ITestListener, ISuiteListener, IInvokedMethodListener
 {
     //Current Directory
-    private String currentDir = System.getProperty("user.dir");
+    private static String currentDir = System.getProperty("user.dir");
 
     //GetScreenShot Method Directory and Image File
     private File getSreenShotMethodImageFile = new File (currentDir +
@@ -34,10 +37,14 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
     public void onTestFailure(ITestResult result){
         System.out.println("***** Error "+result.getName()+" test has failed *****");
         String methodName=result.getName().toString().trim();
-        takeScreenShot(methodName);
+        if (Driver.isDriverRunning()) {
+            Allure.getLifecycle().addAttachment(methodName, "image/png", "png", takeScreenShot());
+            //takeScreenShot(methodName);
+        }
     }
 
-    public void takeScreenShot(String methodName) {
+    //@Attachment(value="EntirePage Screenshot of {0}", type="image/png")
+    public static byte[] takeScreenShot() {
         //////////Screenshot viewable area////////////////
 
         //get the driver
@@ -56,12 +63,17 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
         Screenshot entirePageScreenShot = new AShot().
                 shootingStrategy(ShootingStrategies.viewportPasting(100)).takeScreenshot(Driver.getInstance().getDriver());
         //Write Screenshot to a file
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try {
-        ImageIO.write(entirePageScreenShot.getImage(),"PNG", new File(currentDir + "\\ScreenShots\\Ashot\\EntirePage\\"+methodName+".png"));
+            ImageIO.write(entirePageScreenShot.getImage(),"PNG", baos/*new File(currentDir + "\\ScreenShots\\Ashot\\EntirePage\\"+methodName+".png")*/);
+            baos.flush();
+            byte[] imageInByte = baos.toByteArray();
+            baos.close();
+            return imageInByte;
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        return "Unable to Get Screenshot.".getBytes();
         //////////////////////////////////////////////
     }
 
@@ -84,7 +96,10 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
     public void onTestSuccess(ITestResult result){
         System.out.println("***** Success "+result.getName()+" test is OK *****");
         String methodName=result.getName().toString().trim();
-        takeScreenShot(methodName);
+        if (Driver.isDriverRunning()) {
+            Allure.getLifecycle().addAttachment(methodName, "image/png", "png", takeScreenShot());
+            //takeScreenShot(methodName);
+        }
     }
 
     @Override
