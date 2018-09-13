@@ -1,6 +1,8 @@
 package temp_page;
 
 import org.openqa.selenium.By;
+import selenium_methods.Button;
+import selenium_methods.Navigate;
 import selenium_methods.Webelement;
 
 public class TempPage {
@@ -9,17 +11,17 @@ public class TempPage {
     private By search = By.cssSelector("input.fast-search__input");
 
     //web elements
-    Webelement page = new Webelement();
-    Webelement button = new Webelement();
+    Navigate navigate = new Navigate();
+    Button button = new Button();
 
-    public void navigateTo(String url)
+    public void goTo(String url)
     {
-        page.goTo(url);
+        navigate.goTo(url);
     }
 
     public void searchIn()
     {
-        button.click(search);
+        button.click(search, 1);
     }
 
 }

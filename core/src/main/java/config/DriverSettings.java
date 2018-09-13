@@ -21,4 +21,6 @@ public class DriverSettings {
 
     public String browser = "Chrome";
     public int ajaxWait = 60;
+    public int timeout = 40;
+    public int interval = 50;
 }

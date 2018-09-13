@@ -1,21 +1,37 @@
 package selenium_methods;
 
 import driver.Driver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import config.DriverSettings;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
 
 public class Webelement {
 
     WebDriver driver = Driver.getInstance().currentDriver;
 
-    public void goTo(String url)
+    public WebElement WaitUntilClickable(By locator, int delimeter)
     {
-        driver.navigate().to(url);
+        WebDriverWait wait = new WebDriverWait(Driver.getInstance().currentDriver,
+                TimeUnit.SECONDS.toSeconds(DriverSettings.getInstance().timeout / delimeter));
+        wait.pollingEvery(Duration.ofMillis(DriverSettings.getInstance().interval));
+        wait.ignoring(WebDriverException.class);
+        wait.ignoring(NoSuchElementException.class);
+        wait.ignoring(StaleElementReferenceException.class);
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
-    public void click(By locator)
+    public WebElement WaitUntilExist(By locator, int delimeter)
     {
-        driver.findElement(locator);
+        WebDriverWait wait = new WebDriverWait(Driver.getInstance().currentDriver, TimeUnit.SECONDS.toSeconds(DriverSettings.getInstance().timeout / delimeter));
+        wait.pollingEvery(Duration.ofMillis(DriverSettings.getInstance().interval));
+        wait.ignoring(WebDriverException.class);
+        wait.ignoring(NoSuchElementException.class);
+        wait.ignoring(StaleElementReferenceException.class);
+        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 }

@@ -11,7 +11,7 @@ public class TempTest extends SetUp {
     @Test
     public void someTest()
     {
-        tempPage.navigateTo("https://www.onliner.by/");
+        tempPage.goTo("https://www.onliner.by/");
     }
 
 }

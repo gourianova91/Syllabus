@@ -9,7 +9,7 @@
         "name" : "temp_test.TempTest",
         "children" : [ {
           "name" : "failedTest",
-          "uid" : "c931fe30a4ab5f06",
+          "uid" : "bf6c7bed6d85818",
           "parentUid" : "5222af9f4546de125c4eef7b2e6ce275",
           "status" : "passed",
           "time" : {
@@ -21,13 +21,13 @@
           "parameters" : [ ]
         }, {
           "name" : "someTest",
-          "uid" : "1768935d4aae4046",
+          "uid" : "5340ccb2a5e5b38f",
           "parentUid" : "5222af9f4546de125c4eef7b2e6ce275",
           "status" : "passed",
           "time" : {
-            "start" : 1536837296518,
-            "stop" : 1536837311021,
-            "duration" : 14503
+            "start" : 1536842749254,
+            "stop" : 1536842762434,
+            "duration" : 13180
           },
           "flaky" : false,
           "parameters" : [ ]

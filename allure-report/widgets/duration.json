@@ -1,15 +1,15 @@
 [ {
-  "uid" : "1768935d4aae4046",
+  "uid" : "5340ccb2a5e5b38f",
   "name" : "someTest",
   "time" : {
-    "start" : 1536837296518,
-    "stop" : 1536837311021,
-    "duration" : 14503
+    "start" : 1536842749254,
+    "stop" : 1536842762434,
+    "duration" : 13180
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "c931fe30a4ab5f06",
+  "uid" : "bf6c7bed6d85818",
   "name" : "failedTest",
   "time" : {
     "start" : 1536827582515,
