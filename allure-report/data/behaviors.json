@@ -3,7 +3,7 @@
   "name" : "behaviors",
   "children" : [ {
     "name" : "failedTest",
-    "uid" : "bf6c7bed6d85818",
+    "uid" : "d46abd757c11f765",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
@@ -15,13 +15,13 @@
     "parameters" : [ ]
   }, {
     "name" : "someTest",
-    "uid" : "5340ccb2a5e5b38f",
+    "uid" : "46bd813d0bd35da",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
-      "start" : 1536842749254,
-      "stop" : 1536842762434,
-      "duration" : 13180
+      "start" : 1536914746844,
+      "stop" : 1536914773742,
+      "duration" : 26898
     },
     "flaky" : false,
     "parameters" : [ ]

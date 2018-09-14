@@ -49,11 +49,6 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
     @Override
     public void onTestSuccess(ITestResult result){
         Reporter.log("\nSUCCESFULLY EXECUTED TEST: " + result.getTestClass().getName() + "." + result.getMethod().getMethodName() + "\n", true);Reporter.log("\n");
-        String Name = result.getTestClass().getName() + "." + result.getMethod().getMethodName() ;
-        if (Driver.isDriverRunning()) {
-            //Allure.getLifecycle().addAttachment(Name, "image/png", "png", AllureAttachments.takeScreenShotEntirePage(Name));
-            AllureAttachments.takeScreenShot();
-        }
     }
 
     /*This belongs to ITestListener, It will Execute only when the Test is FAILED*/
@@ -62,8 +57,7 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
         Reporter.log("\nFAILED TEST: " + result.getTestClass().getName() + "." + result.getMethod().getMethodName() + "\n", true);
         String Name = result.getTestClass().getName() + "." + result.getMethod().getMethodName() ;
         if (Driver.isDriverRunning()) {
-            //Allure.getLifecycle().addAttachment(methodName, "image/png", "png", takeScreenShot());
-            AllureAttachments.takeScreenShot();
+            AllureAttachments.takeScreenShot(Name);
         }
     }
 

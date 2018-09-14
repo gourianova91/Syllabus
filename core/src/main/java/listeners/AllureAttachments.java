@@ -15,8 +15,8 @@ import java.nio.file.Paths;
 
 public class AllureAttachments {
 
-    @Attachment(value = "Page")
-    public static byte[] takeScreenShot()
+    @Attachment(value = "Screenshot of {0}", type="image/png")
+    public static byte[] takeScreenShot(String name)
     {
         /*Screenshot viewable area by AShot*/
         Screenshot entirePageScreenShot = new AShot().takeScreenshot(Driver.getInstance().getDriver());
