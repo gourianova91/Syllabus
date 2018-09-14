@@ -1,1 +1,0 @@
-{"uuid":"e5ce7737-26b9-4264-b786-47d42ab33805","name":"temp_test.TempTest","start":1536824591649,"stop":1536824608559,"children":["c2caa740-b2e9-4dce-bd61-368ae8d6f7c6"],"befores":[{"name":"setupSuite","status":"passed","stage":"finished","description":"","start":1536824591727,"stop":1536824599236}]}

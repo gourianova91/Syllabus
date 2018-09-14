@@ -1,1 +1,0 @@
-{"uuid":"7ec9a7e6-5663-4164-a550-b5a8d67f1f8f","name":"Command line test","start":1536824189197,"stop":1536824198621,"children":["17b29bfa-034f-4517-9fe6-35d53af3e2c5","e68ed2d2-a476-4ee3-813f-837f8980fd83"],"afters":[{"name":"tearDownTest","status":"passed","stage":"finished","description":"","start":1536824198163,"stop":1536824198164}]}

@@ -7,15 +7,15 @@
       "name" : "Expected condition failed: waiting for element to be clickable: By.cssSelector: input.fast-search__input1 (tried for 40 second(s) with 50 milliseconds interval)",
       "children" : [ {
         "name" : "failedTest",
-        "uid" : "c8c54c19b4b66829",
+        "uid" : "fa6b205ec442ed77",
         "parentUid" : "dccb13cf97ddb81c04d5bf70a2400708",
         "status" : "broken",
         "time" : {
-          "start" : 1536916285732,
-          "stop" : 1536916333634,
-          "duration" : 47902
+          "start" : 1536917057434,
+          "stop" : 1536917105370,
+          "duration" : 47936
         },
-        "flaky" : true,
+        "flaky" : false,
         "parameters" : [ ]
       } ],
       "uid" : "dccb13cf97ddb81c04d5bf70a2400708"

@@ -58,13 +58,23 @@
   "a36416bbec65c050c5c29805ec4c6b11" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
+      "broken" : 2,
       "skipped" : 0,
       "passed" : 4,
       "unknown" : 0,
-      "total" : 5
+      "total" : 6
     },
     "items" : [ {
+      "uid" : "fa6b205ec442ed77",
+      "reportUrl" : "http://localhost:8080/job/Syllabus/10/allure/#testresult/fa6b205ec442ed77",
+      "status" : "broken",
+      "statusDetails" : "Expected condition failed: waiting for element to be clickable: By.cssSelector: input.fast-search__input1 (tried for 40 second(s) with 50 milliseconds interval)",
+      "time" : {
+        "start" : 1536917057434,
+        "stop" : 1536917105370,
+        "duration" : 47936
+      }
+    }, {
       "uid" : "c8c54c19b4b66829",
       "reportUrl" : "http://localhost:8080/job/Syllabus/9/allure/#testresult/c8c54c19b4b66829",
       "status" : "broken",
@@ -101,14 +111,25 @@
         "stop" : 1536827591661,
         "duration" : 9146
       }
-    }, {
-      "uid" : "c931fe30a4ab5f06",
-      "reportUrl" : "http://localhost:8080/job/Syllabus/5/allure/#testresult/c931fe30a4ab5f06",
+    } ]
+  },
+  "c3c7ef451eeba5c7caddb87403d1940e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "fbe591c1a320c2f1",
+      "reportUrl" : "http://localhost:8080/job/Syllabus/10/allure/#testresult/fbe591c1a320c2f1",
       "status" : "passed",
       "time" : {
-        "start" : 1536827582515,
-        "stop" : 1536827591661,
-        "duration" : 9146
+        "start" : 1536917105679,
+        "stop" : 1536917107753,
+        "duration" : 2074
       }
     } ]
   }
