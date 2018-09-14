@@ -14,4 +14,11 @@ public class TempTest extends SetUp {
         tempPage.goTo("https://www.onliner.by/");
     }
 
+    @Test
+    public void failedTest()
+    {
+        tempPage.goTo("https://www.onliner.by/");
+        tempPage.searchIn();
+    }
+
 }

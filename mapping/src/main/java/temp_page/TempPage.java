@@ -8,7 +8,7 @@ import selenium_methods.Webelement;
 public class TempPage {
 
     //locators
-    private By search = By.cssSelector("input.fast-search__input");
+    private By search = By.cssSelector("input.fast-search__input1");
 
     //web elements
     Navigate navigate = new Navigate();

@@ -2,9 +2,9 @@
   "name" : "Jenkins",
   "type" : "jenkins",
   "url" : "http://localhost:8080/",
-  "buildOrder" : 7,
-  "buildName" : "Syllabus #7",
-  "buildUrl" : "http://localhost:8080/job/Syllabus/7/",
+  "buildOrder" : 8,
+  "buildName" : "Syllabus #8",
+  "buildUrl" : "http://localhost:8080/job/Syllabus/8/",
   "reportName" : "AllureReport",
-  "reportUrl" : "http://localhost:8080/job/Syllabus/7/allure"
+  "reportUrl" : "http://localhost:8080/job/Syllabus/8/allure"
 } ]

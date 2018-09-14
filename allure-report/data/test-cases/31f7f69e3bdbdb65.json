@@ -1,0 +1,117 @@
+{
+  "uid" : "31f7f69e3bdbdb65",
+  "name" : "someTest",
+  "fullName" : "temp_test.TempTest.someTest",
+  "historyId" : "e92fb5eadbe38b6eca6ce1c8d22998d5",
+  "time" : {
+    "start" : 1536841666149,
+    "stop" : 1536841681164,
+    "duration" : 15015
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ {
+    "name" : "setupSuite",
+    "time" : {
+      "start" : 1536841661723,
+      "stop" : 1536841665962,
+      "duration" : 4239
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "5ebdda4909e49ffb",
+      "name" : "someTest",
+      "source" : "5ebdda4909e49ffb.png",
+      "type" : "image/png",
+      "size" : 7138369
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "tearDownTest",
+    "time" : {
+      "start" : 1536841681357,
+      "stop" : 1536841681357,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "tearDownSuite",
+    "time" : {
+      "start" : 1536841681641,
+      "stop" : 1536841684611,
+      "duration" : 2970
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "temp_test.TempTest"
+  }, {
+    "name" : "testClass",
+    "value" : "temp_test.TempTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "someTest"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Default Suite"
+  }, {
+    "name" : "suite",
+    "value" : "Syllabus"
+  }, {
+    "name" : "subSuite",
+    "value" : "temp_test.TempTest"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-RO4UOMO"
+  }, {
+    "name" : "thread",
+    "value" : "16292@DESKTOP-RO4UOMO.main(1)"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "31f7f69e3bdbdb65.json",
+  "parameterValues" : [ ]
+}

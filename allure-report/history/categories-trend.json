@@ -1,4 +1,9 @@
 [ {
+  "buildOrder" : 8,
+  "reportUrl" : "http://localhost:8080/job/Syllabus/8/allure",
+  "reportName" : "AllureReport",
+  "data" : { }
+}, {
   "buildOrder" : 7,
   "reportUrl" : "http://localhost:8080/job/Syllabus/7/allure",
   "reportName" : "AllureReport",
