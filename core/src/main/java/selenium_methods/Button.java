@@ -4,8 +4,13 @@ import org.openqa.selenium.By;
 
 public class Button extends Webelement {
 
-    public void click(By locator, int delimeter)
+    public void click(By locator)
     {
-        WaitUntilClickable(locator, delimeter).click();
+        WaitUntilClickable(locator).click();
+    }
+
+    public void click(By locator, int divider)
+    {
+        WaitUntilClickable(locator, divider).click();
     }
 }

@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 
 public class Element extends Webelement {
 
-    public String getText(By locator, int delimeter)
+    public String getText(By locator)
     {
-        return WaitUntilExist(locator, delimeter).getText();
+        return WaitUntilExist(locator).getText();
     }
 }

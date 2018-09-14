@@ -21,7 +21,7 @@ public class TempPage {
 
     public void searchIn()
     {
-        button.click(search, 1);
+        button.click(search, 30);
     }
 
 }
