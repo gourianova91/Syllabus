@@ -1,20 +1,7 @@
 package listeners;
 
 import driver.Driver;
-import io.qameta.allure.Allure;
-import io.qameta.allure.Attachment;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.testng.*;
-import ru.yandex.qatools.ashot.AShot;
-import ru.yandex.qatools.ashot.Screenshot;
-import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
-
-import javax.imageio.ImageIO;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
 
 public class TestListener implements ITestListener, ISuiteListener, IInvokedMethodListener
 {
@@ -52,7 +39,7 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
     @Override
     public void onTestFailure(ITestResult result){
         Reporter.log("\nFAILED TEST: " + result.getTestClass().getName() + "." + result.getMethod().getMethodName() + "\n", true);
-        String Name = result.getTestClass().getName() + "." + result.getMethod().getMethodName() ;
+        String Name = result.getTestClass().getName() + "." + result.getMethod().getMethodName();
         if (Driver.isDriverRunning()) {
             AllureAttachments.takeScreenShot(Name);
         }

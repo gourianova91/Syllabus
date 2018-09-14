@@ -2,9 +2,12 @@ package listeners;
 
 import driver.Driver;
 import io.qameta.allure.Attachment;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
+import selenium_methods.Webelement;
 
 import javax.imageio.ImageIO;
 import java.io.ByteArrayOutputStream;
@@ -19,7 +22,7 @@ public class AllureAttachments {
     public static byte[] takeScreenShot(String name)
     {
         /*Screenshot viewable area by AShot*/
-        Screenshot entirePageScreenShot = new AShot().takeScreenshot(Driver.getInstance().getDriver());
+        Screenshot entirePageScreenShot = new AShot().takeScreenshot(Driver.getInstance().currentDriver);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try {
             ImageIO.write(entirePageScreenShot.getImage(),"PNG", baos);
@@ -33,11 +36,30 @@ public class AllureAttachments {
         return "Unable to Get Screenshot.".getBytes();
     }
 
-    //@Attachment(value="EntirePage Screenshot of {0}", type="image/png")
+    @Attachment(value="EntirePage Screenshot of {0}", type="image/png")
     public static byte[] takeScreenShotEntirePage(String name) {
         /*Take Screenshot of entire page by AShot*/
         Screenshot entirePageScreenShot = new AShot().
-                shootingStrategy(ShootingStrategies.viewportPasting(100)).takeScreenshot(Driver.getInstance().getDriver());
+                shootingStrategy(ShootingStrategies.viewportPasting(100)).takeScreenshot(Driver.getInstance().currentDriver);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        try {
+            ImageIO.write(entirePageScreenShot.getImage(),"PNG", baos);
+            baos.flush();
+            byte[] imageInByte = baos.toByteArray();
+            baos.close();
+            return imageInByte;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "Unable to Get Screenshot.".getBytes();
+    }
+
+    @Attachment(value="Screenshot of WebElement {1} in test {0}", type="image/png")
+    public static byte[] takeScreenShotWebelement(String name, By locator) {
+        /*Take Screenshot of WebElement by AShot*/
+        Webelement webelement = new Webelement();
+        WebElement element = webelement.WaitUntilExist(locator);
+        Screenshot entirePageScreenShot = new AShot().takeScreenshot(Driver.getInstance().currentDriver, element);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try {
             ImageIO.write(entirePageScreenShot.getImage(),"PNG", baos);

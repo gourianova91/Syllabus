@@ -3,7 +3,6 @@ package temp_page;
 import org.openqa.selenium.By;
 import selenium_methods.Button;
 import selenium_methods.Navigate;
-import selenium_methods.Webelement;
 
 public class TempPage {
 

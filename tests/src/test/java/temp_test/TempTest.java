@@ -5,14 +5,14 @@ import setup.SetUp;
 
 public class TempTest extends SetUp {
 
-    @Test
+    @Test(groups = { "regression" })
     public void failedTest()
     {
         tempPage.goTo("https://www.onliner.by/");
         tempPage.searchIn();
     }
 
-    @Test
+    @Test(groups = { "smoke" })
     public void passedTest()
     {
         tempPage.goTo("https://www.onliner.by/");
