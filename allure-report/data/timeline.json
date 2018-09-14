@@ -4,37 +4,33 @@
   "children" : [ {
     "name" : "DESKTOP-RO4UOMO",
     "children" : [ {
-      "name" : "32812@DESKTOP-RO4UOMO.main(1)",
+      "name" : "16896@DESKTOP-RO4UOMO.main(1)",
       "children" : [ {
-        "name" : "failedTest",
-        "uid" : "ede0446fd4491709",
-        "parentUid" : "d8f86880382f4b53068438e49c0e72f1",
+        "name" : "someTest",
+        "uid" : "d174e233ab80db1e",
+        "parentUid" : "d34d102d59d30c3d44c219c7ad7b02b2",
         "status" : "passed",
         "time" : {
-          "start" : 1536827582515,
-          "stop" : 1536827591661,
-          "duration" : 9146
+          "start" : 1536916335355,
+          "stop" : 1536916337652,
+          "duration" : 2297
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "failedTest",
+        "uid" : "c8c54c19b4b66829",
+        "parentUid" : "d34d102d59d30c3d44c219c7ad7b02b2",
+        "status" : "broken",
+        "time" : {
+          "start" : 1536916285732,
+          "stop" : 1536916333634,
+          "duration" : 47902
         },
         "flaky" : true,
         "parameters" : [ ]
       } ],
-      "uid" : "d8f86880382f4b53068438e49c0e72f1"
-    }, {
-      "name" : "11668@DESKTOP-RO4UOMO.main(1)",
-      "children" : [ {
-        "name" : "someTest",
-        "uid" : "ad656fe1ad403432",
-        "parentUid" : "5932d49f9322ac8d83433e0829374add",
-        "status" : "passed",
-        "time" : {
-          "start" : 1536915276748,
-          "stop" : 1536915282609,
-          "duration" : 5861
-        },
-        "flaky" : false,
-        "parameters" : [ ]
-      } ],
-      "uid" : "5932d49f9322ac8d83433e0829374add"
+      "uid" : "d34d102d59d30c3d44c219c7ad7b02b2"
     } ],
     "uid" : "4cb3e2e81fe2d994b8ae5544d27eca45"
   } ]

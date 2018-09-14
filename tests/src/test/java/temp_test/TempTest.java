@@ -9,16 +9,15 @@ import setup.SetUp;
 public class TempTest extends SetUp {
 
     @Test
-    public void someTest()
-    {
-        tempPage.goTo("https://www.onliner.by/");
-    }
-
-    @Test
     public void failedTest()
     {
         tempPage.goTo("https://www.onliner.by/");
         tempPage.searchIn();
     }
 
+    @Test
+    public void passedTest()
+    {
+        tempPage.goTo("https://www.onliner.by/");
+    }
 }

@@ -1,5 +1,25 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "name" : "categories",
-  "children" : [ ]
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "Expected condition failed: waiting for element to be clickable: By.cssSelector: input.fast-search__input1 (tried for 40 second(s) with 50 milliseconds interval)",
+      "children" : [ {
+        "name" : "failedTest",
+        "uid" : "c8c54c19b4b66829",
+        "parentUid" : "dccb13cf97ddb81c04d5bf70a2400708",
+        "status" : "broken",
+        "time" : {
+          "start" : 1536916285732,
+          "stop" : 1536916333634,
+          "duration" : 47902
+        },
+        "flaky" : true,
+        "parameters" : [ ]
+      } ],
+      "uid" : "dccb13cf97ddb81c04d5bf70a2400708"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
 }
