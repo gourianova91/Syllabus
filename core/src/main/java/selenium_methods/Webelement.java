@@ -39,7 +39,8 @@ public class Webelement {
 
     public WebElement WaitUntilExist(By locator, int divider)
     {
-        WebDriverWait wait = new WebDriverWait(Driver.getInstance().currentDriver, TimeUnit.SECONDS.toSeconds(DriverSettings.getInstance().timeout / divider));
+        WebDriverWait wait = new WebDriverWait(Driver.getInstance().currentDriver,
+                TimeUnit.SECONDS.toSeconds(DriverSettings.getInstance().timeout / divider));
         wait.pollingEvery(Duration.ofMillis(DriverSettings.getInstance().interval));
         wait.ignoring(WebDriverException.class);
         wait.ignoring(NoSuchElementException.class);
@@ -49,7 +50,8 @@ public class Webelement {
 
     public WebElement WaitUntilExist(By locator)
     {
-        WebDriverWait wait = new WebDriverWait(Driver.getInstance().currentDriver, TimeUnit.SECONDS.toSeconds(DriverSettings.getInstance().timeout / DIVIDER));
+        WebDriverWait wait = new WebDriverWait(Driver.getInstance().currentDriver,
+                TimeUnit.SECONDS.toSeconds(DriverSettings.getInstance().timeout / DIVIDER));
         wait.pollingEvery(Duration.ofMillis(DriverSettings.getInstance().interval));
         wait.ignoring(WebDriverException.class);
         wait.ignoring(NoSuchElementException.class);

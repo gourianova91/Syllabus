@@ -1,30 +1,14 @@
 package setup;
 
 import driver.Driver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeSuite;
-import temp_page.TempPage;
+import org.testng.annotations.AfterMethod;
 
 public class SetUp {
 
-    protected TempPage tempPage;
-
-    @BeforeSuite
-    public void setupSuite()
-    {
-        tempPage = new TempPage();
-    }
-
-    @AfterSuite
+    @AfterMethod(alwaysRun = true)
     public void tearDownSuite()
     {
         Driver.getInstance().destroyDriver();
     }
 
-    @AfterTest
-    public void tearDownTest()
-    {
-        //takes screenshot if test failed
-    }
 }

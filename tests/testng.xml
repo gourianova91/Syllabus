@@ -9,8 +9,8 @@
                 <include name = "smoke"/>
             </run>
         </groups>
-        <packages>
-            <package name="temp_test" />
-        </packages>
+        <classes>
+            <class name="temp_test.TempTest" />
+        </classes>
     </test>
 </suite>
