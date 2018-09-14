@@ -18,9 +18,6 @@ import java.io.IOException;
 
 public class TestListener implements ITestListener, ISuiteListener, IInvokedMethodListener
 {
-    //Current Directory
-    private static String currentDir = System.getProperty("user.dir");
-
     /*This belongs to ISuiteListener and will execute before the Suite Starts*/
     @Override
     public void onStart(ISuite arg0) {
