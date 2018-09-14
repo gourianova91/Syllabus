@@ -12,7 +12,6 @@ import java.util.concurrent.TimeUnit;
 
 public class Webelement {
 
-    WebDriver driver = Driver.getInstance().currentDriver;
     private static int DIVIDER = 1;
 
     public WebElement WaitUntilClickable(By locator, int divider)
