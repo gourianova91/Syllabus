@@ -74,12 +74,12 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
     public void afterInvocation(IInvokedMethod method, ITestResult arg1) {
         String textMsg = "Completed executing following method : " + returnMethodName(method.getTestMethod());
         Reporter.log(textMsg, false);
-        if (method.isTestMethod()) {
+      /*  if (method.isTestMethod()) {
             WebDriver driver = DriverManager.getDriver();
             if (driver != null) {
                 driver.quit();
             }
-        }
+        }*/
     }
 
     /*This will return method names to the calling function*/
