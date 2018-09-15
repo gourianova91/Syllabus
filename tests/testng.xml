@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Syllabus" parallel="false">
+<suite name="Syllabus" parallel="methods">
     <listeners>
-        <listener class-name="listeners.TestListener"/>
+        <listener class-name="listeners.TestListener"></listener>
     </listeners>
     <test name="TempTest">
-        <groups>
-            <run>
-                <include name = "smoke"/>
-            </run>
-        </groups>
+        <parameter name="browserName" value="Chrome"></parameter>
         <classes>
             <class name="temp_test.TempTest" />
         </classes>

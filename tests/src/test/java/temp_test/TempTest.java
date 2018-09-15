@@ -11,6 +11,8 @@ public class TempTest extends SetUp {
     @Test( groups = { "regression" })
     public void failedTest()
     {
+        long id = Thread.currentThread().getId();
+        System.out.println("Simple test-method One. Thread id is: " + id);
         tempPage = new TempPage();
         tempPage.goTo("https://www.onliner.by/");
         tempPage.searchIn();
@@ -19,6 +21,8 @@ public class TempTest extends SetUp {
     @Test(groups = {"smoke" })
     public void passedTest()
     {
+        long id = Thread.currentThread().getId();
+        System.out.println("Simple test-method One. Thread id is: " + id);
         tempPage = new TempPage();
         tempPage.goTo("https://www.onliner.by/");
     }

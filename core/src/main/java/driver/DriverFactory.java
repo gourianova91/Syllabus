@@ -1,6 +1,5 @@
 package driver;
 
-import config.DriverSettings;
 import events.Events;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,28 +8,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
-public class Driver {
+public class DriverFactory {
 
-    //region Singleton driver initialization
-    private static volatile Driver instance;
-
-    public WebDriver currentDriver = getDriver();
-
-    private Driver() {}
-
-    public static Driver getInstance() {
-        if (instance == null) {
-            synchronized (Driver.class) {
-                if (instance == null) {
-                    instance = new Driver();
-                }
-            }
-        }
-        return instance;
-    }
-    //endregion
-
-    private ChromeOptions ChromeBrowserOptions()
+    private static ChromeOptions ChromeBrowserOptions()
     {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
@@ -45,7 +25,7 @@ public class Driver {
         return options;
     }
 
-    private FirefoxOptions FirefoxBrowserOptions()
+    private static FirefoxOptions FirefoxBrowserOptions()
     {
         System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
         FirefoxOptions options = new FirefoxOptions();
@@ -53,32 +33,11 @@ public class Driver {
         return options;
     }
 
-    public WebDriver getDriver()
-    {
-        if (instance == null)
-        {
-            return getBrowser(DriverSettings.getInstance().browser);
-        }
-        return currentDriver;
-    }
-
-    public static Boolean isDriverRunning()
-    {
-        if (instance == null)
-        {
-            return false;
-        }
-        else
-        {
-            return instance.currentDriver != null;
-        }
-    }
-
-    private WebDriver getBrowser(String browser) {
-        currentDriver = null;
-        if (browser.equals("Chrome")) {
+    public static WebDriver createBrowser(String browserName) {
+        WebDriver currentDriver = null;
+        if (browserName.contains("Chrome")) {
             currentDriver = new ChromeDriver(ChromeBrowserOptions());
-        } else if (browser.equals("Firefox")) {
+        } else if (browserName.contains("Firefox")) {
             currentDriver = new FirefoxDriver(FirefoxBrowserOptions());
             currentDriver.manage().window().maximize();
         }
@@ -89,15 +48,5 @@ public class Driver {
             return eDriver;
         }
         return null;
-    }
-
-    public void destroyDriver()
-    {
-        if (instance != null)
-        {
-            currentDriver.close();
-            currentDriver.quit();
-            instance = null;
-        }
     }
 }

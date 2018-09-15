@@ -1,6 +1,8 @@
 package listeners;
 
-import driver.Driver;
+import driver.DriverFactory;
+import driver.DriverManager;
+import org.openqa.selenium.WebDriver;
 import org.testng.*;
 
 public class TestListener implements ITestListener, ISuiteListener, IInvokedMethodListener
@@ -40,9 +42,9 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
     public void onTestFailure(ITestResult result){
         Reporter.log("\nFAILED TEST: " + result.getTestClass().getName() + "." + result.getMethod().getMethodName() + "\n", true);
         String Name = result.getTestClass().getName() + "." + result.getMethod().getMethodName();
-        if (Driver.isDriverRunning()) {
+        //if (Driver.isDriverRunning()) {
             AllureAttachments.takeScreenShot(Name);
-        }
+        //}
     }
 
     /*This belongs to ITestListener, It and will execute before the Main Test Starts (@Test)*/
@@ -58,15 +60,26 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
     }
 
     /*This belongs to IInvokedMethodListener, It will execute before every method Including @Before @After @Test*/
-    public void beforeInvocation(IInvokedMethod arg0, ITestResult arg1) {
-        String textMsg = "About to begin executing following method : " + returnMethodName(arg0.getTestMethod());
+    public void beforeInvocation(IInvokedMethod method, ITestResult arg1) {
+        String textMsg = "About to begin executing following method : " + returnMethodName(method.getTestMethod());
         Reporter.log(textMsg, false);
+        if (method.isTestMethod()) {
+            String browserName = method.getTestMethod().getXmlTest().getLocalParameters().get("browserName");
+            WebDriver driver = DriverFactory.createBrowser(browserName);
+            DriverManager.setWebDriver(driver);
+        }
     }
 
     /*This belongs to IInvokedMethodListener and will execute after every method Including @Before @After @Test*/
-    public void afterInvocation(IInvokedMethod arg0, ITestResult arg1) {
-        String textMsg = "Completed executing following method : " + returnMethodName(arg0.getTestMethod());
+    public void afterInvocation(IInvokedMethod method, ITestResult arg1) {
+        String textMsg = "Completed executing following method : " + returnMethodName(method.getTestMethod());
         Reporter.log(textMsg, false);
+        if (method.isTestMethod()) {
+            WebDriver driver = DriverManager.getDriver();
+            if (driver != null) {
+                driver.quit();
+            }
+        }
     }
 
     /*This will return method names to the calling function*/

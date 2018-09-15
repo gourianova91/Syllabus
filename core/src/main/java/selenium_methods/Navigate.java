@@ -1,12 +1,12 @@
 package selenium_methods;
 
-import driver.Driver;
+import driver.DriverManager;
 
 public class Navigate extends Webelement
 {
 
     public void goTo(String url)
     {
-        Driver.getInstance().currentDriver.navigate().to(url);
+        DriverManager.getDriver().navigate().to(url);
     }
 }

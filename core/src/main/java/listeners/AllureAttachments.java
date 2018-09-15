@@ -1,6 +1,6 @@
 package listeners;
 
-import driver.Driver;
+import driver.DriverManager;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -22,7 +22,7 @@ public class AllureAttachments {
     public static byte[] takeScreenShot(String name)
     {
         /*Screenshot viewable area by AShot*/
-        Screenshot entirePageScreenShot = new AShot().takeScreenshot(Driver.getInstance().currentDriver);
+        Screenshot entirePageScreenShot = new AShot().takeScreenshot(DriverManager.getDriver());
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try {
             ImageIO.write(entirePageScreenShot.getImage(),"PNG", baos);
@@ -40,7 +40,7 @@ public class AllureAttachments {
     public static byte[] takeScreenShotEntirePage(String name) {
         /*Take Screenshot of entire page by AShot*/
         Screenshot entirePageScreenShot = new AShot().
-                shootingStrategy(ShootingStrategies.viewportPasting(100)).takeScreenshot(Driver.getInstance().currentDriver);
+                shootingStrategy(ShootingStrategies.viewportPasting(100)).takeScreenshot(DriverManager.getDriver());
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try {
             ImageIO.write(entirePageScreenShot.getImage(),"PNG", baos);
@@ -59,7 +59,7 @@ public class AllureAttachments {
         /*Take Screenshot of WebElement by AShot*/
         Webelement webelement = new Webelement();
         WebElement element = webelement.WaitUntilExist(locator);
-        Screenshot entirePageScreenShot = new AShot().takeScreenshot(Driver.getInstance().currentDriver, element);
+        Screenshot entirePageScreenShot = new AShot().takeScreenshot(DriverManager.getDriver(), element);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try {
             ImageIO.write(entirePageScreenShot.getImage(),"PNG", baos);
