@@ -38,7 +38,7 @@
                     <properties>
                         <property>
                             <name>listener</name>
-                            <value>ru.yandex.qatools.allure.testng.AllureTestListener, listeners.TestListener</value>
+                            <value>ru.yandex.qatools.allure.testng.AllureTestListener</value>
                         </property>
                     </properties>
                 </configuration>
