@@ -42,9 +42,7 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
     public void onTestFailure(ITestResult result){
         Reporter.log("\nFAILED TEST: " + result.getTestClass().getName() + "." + result.getMethod().getMethodName() + "\n", true);
         String Name = result.getTestClass().getName() + "." + result.getMethod().getMethodName();
-        //if (Driver.isDriverRunning()) {
             AllureAttachments.takeScreenShot(Name);
-        //}
     }
 
     /*This belongs to ITestListener, It and will execute before the Main Test Starts (@Test)*/
@@ -74,12 +72,6 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
     public void afterInvocation(IInvokedMethod method, ITestResult arg1) {
         String textMsg = "Completed executing following method : " + returnMethodName(method.getTestMethod());
         Reporter.log(textMsg, false);
-      /*  if (method.isTestMethod()) {
-            WebDriver driver = DriverManager.getDriver();
-            if (driver != null) {
-                driver.quit();
-            }
-        }*/
     }
 
     /*This will return method names to the calling function*/

@@ -1,9 +1,12 @@
 package temp_test;
 
+import listeners.TestListener;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import setup.SetUp;
 import temp_page.TempPage;
 
+@Listeners(TestListener.class)
 public class TempTest extends SetUp {
 
     private TempPage tempPage;
