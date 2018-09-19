@@ -2,6 +2,9 @@
 <suite name="Syllabus" parallel="methods">
     <test name="TempTest">
         <parameter name="browserName" value="Chrome"></parameter>
+        <parameter name="smartPhone" value="huawei p smart plus"></parameter>
+        <parameter name="pc" value="imac pro"></parameter>
+        <parameter name="laptop" value="asus x541u"></parameter>
         <classes>
             <class name="temp_test.TempTest" />
         </classes>

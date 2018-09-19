@@ -2,11 +2,12 @@ package events;
 
 import config.DriverSettings;
 import driver.DriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import selenium_methods.Webelement;
 
 import java.util.concurrent.TimeUnit;
 
@@ -41,17 +42,49 @@ public class Events extends AbstractWebDriverEventListener
     }
 
     public void afterNavigateTo(String url, WebDriver driver) {
-        System.out.println("Navigated to:'" + url + "'");
+        System.out.println("Navigated to: '" + url + "'");
         waitForAjax();
         waitForDocumentReady();
     }
 
-    public void beforeClickOn(Webelement element, WebDriver driver) {
-        System.out.println("Trying to click on: " + element.toString());
+    public void beforeFindBy(By by, WebElement element, WebDriver driver) {
+        waitForAjax();
+        waitForDocumentReady();
     }
 
-    public void afterClickOn(Webelement element, WebDriver driver) {
-        System.out.println("Clicked on: " + element.toString());
+    public void afterFindBy(By by, WebElement element, WebDriver driver) {
+        waitForAjax();
+        waitForDocumentReady();
+    }
+
+    public void beforeClickOn(WebElement element, WebDriver driver) {
+        waitForAjax();
+        waitForDocumentReady();
+    }
+
+    public void afterClickOn(WebElement element, WebDriver driver) {
+        waitForAjax();
+        waitForDocumentReady();
+    }
+
+    public void beforeChangeValueOf(WebElement element, WebDriver driver, CharSequence[] keysToSend) {
+        waitForAjax();
+        waitForDocumentReady();
+    }
+
+    public void afterChangeValueOf(WebElement element, WebDriver driver, CharSequence[] keysToSend) {
+        waitForAjax();
+        waitForDocumentReady();
+    }
+
+    public void beforeGetText(WebElement element, WebDriver driver) {
+        waitForAjax();
+        waitForDocumentReady();
+    }
+
+    public void afterGetText(WebElement element, WebDriver driver, String text) {
+        waitForAjax();
+        waitForDocumentReady();
     }
 
     public void onException(Throwable error, WebDriver driver) {
