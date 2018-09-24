@@ -10,7 +10,7 @@ import java.time.Duration;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
-public class Webelement {
+public class Waiter {
 
     private static int DIVIDER = 1;
 

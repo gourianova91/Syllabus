@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
-import selenium_methods.Webelement;
+import selenium_methods.Waiter;
 
 import javax.imageio.ImageIO;
 import java.io.ByteArrayOutputStream;
@@ -57,8 +57,8 @@ public class AllureAttachments {
     @Attachment(value="Screenshot of WebElement {1} in test {0}", type="image/png")
     public static byte[] takeScreenShotWebelement(String name, By locator) {
         /*Take Screenshot of WebElement by AShot*/
-        Webelement webelement = new Webelement();
-        WebElement element = webelement.WaitUntilExist(locator);
+        Waiter waiter = new Waiter();
+        WebElement element = waiter.WaitUntilExist(locator);
         Screenshot entirePageScreenShot = new AShot().takeScreenshot(DriverManager.getDriver(), element);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try {

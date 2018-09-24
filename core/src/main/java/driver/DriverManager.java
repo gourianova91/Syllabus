@@ -6,7 +6,7 @@ public class DriverManager {
 
     private final static ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
 
-    public static WebDriver getDriver() {
+    public static synchronized WebDriver getDriver() {
         return webDriver.get();
     }
 

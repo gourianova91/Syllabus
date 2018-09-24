@@ -2,7 +2,7 @@ package selenium_methods;
 
 import driver.DriverManager;
 
-public class Navigate extends Webelement
+public class Navigate extends Waiter
 {
 
     public void goTo(String url)
