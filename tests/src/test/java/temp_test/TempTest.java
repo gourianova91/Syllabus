@@ -17,7 +17,7 @@ public class TempTest extends SetUp {
     public void failedTest()
     {
         long id = Thread.currentThread().getId();
-        System.out.println("Simple test-method One. Thread id is: " + id);
+        System.out.println("failedTest. Thread id is: " + id);
         tempPage = new TempPage();
         tempPage.goTo("https://www.onliner.by/");
         tempPage.searchIn();
@@ -27,7 +27,7 @@ public class TempTest extends SetUp {
     public void passedTest()
     {
         long id = Thread.currentThread().getId();
-        System.out.println("Simple test-method One. Thread id is: " + id);
+        System.out.println("passedTest. Thread id is: " + id);
         tempPage = new TempPage();
         tempPage.goTo("https://www.onliner.by/");
     }
@@ -36,6 +36,8 @@ public class TempTest extends SetUp {
     @Parameters({"smartPhone", "pc", "laptop"})
     public void parametrizedTest(String smartPhone, String pc, String laptop)
     {
+        long id = Thread.currentThread().getId();
+        System.out.println("parametrizedTest. Thread id is: " + id);
         tempPage = new TempPage();
         tempPage.goTo("https://www.onliner.by/");
         tempPage.searchFor(smartPhone);
@@ -52,6 +54,8 @@ public class TempTest extends SetUp {
     @Test(dataProvider = "setSmartNames")
     public void testWithDataProvider(String smartName)
     {
+        long id = Thread.currentThread().getId();
+        System.out.println("testWithDataProvider. Thread id is: " + id);
         tempPage = new TempPage();
         tempPage.goTo("https://www.onliner.by/");
         tempPage.searchFor(smartName);

@@ -1,17 +1,20 @@
 package setup;
 
 import driver.DriverManager;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 
 public class SetUp {
 
-    @AfterMethod
+    @AfterMethod (alwaysRun = true)
     public void tearDownMethod()
     {
-        WebDriver driver = DriverManager.getDriver();
-        if (driver != null) {
-            driver.quit();
+        long id = Thread.currentThread().getId();
+        System.out.println("tearDownMethod. Thread id is: " + id);
+        if (DriverManager.getWebDriver() != null) {
+            DriverManager.getWebDriver().quit();
+            DriverManager.removeWebDriver();
+            id = Thread.currentThread().getId();
+            System.out.println("tearDownMethod. Remove thread id is: " + id);
         }
     }
 

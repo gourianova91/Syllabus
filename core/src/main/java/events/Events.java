@@ -19,7 +19,7 @@ public class Events extends AbstractWebDriverEventListener
 
     public void waitForAjax()
     {
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(),
+        WebDriverWait wait = new WebDriverWait(DriverManager.getWebDriver(),
                 TimeUnit.SECONDS.toSeconds(DriverSettings.getInstance().ajaxWait));
         // - - - JQuery wait - - -
         wait.until( d -> ((JavascriptExecutor) d).executeScript(JQUERY_WAIT));
@@ -30,7 +30,7 @@ public class Events extends AbstractWebDriverEventListener
     public void waitForDocumentReady()
     {
         // - - - Document wait - - -
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(),
+        WebDriverWait wait = new WebDriverWait(DriverManager.getWebDriver(),
                 TimeUnit.SECONDS.toSeconds(DriverSettings.getInstance().ajaxWait));
         wait.until( d -> ((JavascriptExecutor) d).executeScript(DOCUMENT_READY));
     }

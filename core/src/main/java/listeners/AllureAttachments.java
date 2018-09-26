@@ -22,7 +22,7 @@ public class AllureAttachments {
     public static byte[] takeScreenShot(String name)
     {
         /*Screenshot viewable area by AShot*/
-        Screenshot entirePageScreenShot = new AShot().takeScreenshot(DriverManager.getDriver());
+        Screenshot entirePageScreenShot = new AShot().takeScreenshot(DriverManager.getWebDriver());
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try {
             ImageIO.write(entirePageScreenShot.getImage(),"PNG", baos);
@@ -40,7 +40,7 @@ public class AllureAttachments {
     public static byte[] takeScreenShotEntirePage(String name) {
         /*Take Screenshot of entire page by AShot*/
         Screenshot entirePageScreenShot = new AShot().
-                shootingStrategy(ShootingStrategies.viewportPasting(100)).takeScreenshot(DriverManager.getDriver());
+                shootingStrategy(ShootingStrategies.viewportPasting(100)).takeScreenshot(DriverManager.getWebDriver());
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try {
             ImageIO.write(entirePageScreenShot.getImage(),"PNG", baos);
@@ -59,7 +59,7 @@ public class AllureAttachments {
         /*Take Screenshot of WebElement by AShot*/
         Waiter waiter = new Waiter();
         WebElement element = waiter.WaitUntilExist(locator);
-        Screenshot entirePageScreenShot = new AShot().takeScreenshot(DriverManager.getDriver(), element);
+        Screenshot entirePageScreenShot = new AShot().takeScreenshot(DriverManager.getWebDriver(), element);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try {
             ImageIO.write(entirePageScreenShot.getImage(),"PNG", baos);

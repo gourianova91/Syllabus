@@ -16,7 +16,7 @@ public class Waiter {
 
     public WebElement WaitUntilClickable(By locator, int divider)
     {
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(),
+        WebDriverWait wait = new WebDriverWait(DriverManager.getWebDriver(),
                 TimeUnit.SECONDS.toSeconds(DriverSettings.getInstance().timeout / divider));
         wait.pollingEvery(Duration.ofMillis(DriverSettings.getInstance().interval));
         wait.ignoring(WebDriverException.class);
@@ -27,7 +27,7 @@ public class Waiter {
 
     public WebElement WaitUntilClickable(By locator)
     {
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(),
+        WebDriverWait wait = new WebDriverWait(DriverManager.getWebDriver(),
                 TimeUnit.SECONDS.toSeconds(DriverSettings.getInstance().timeout / DIVIDER));
         wait.pollingEvery(Duration.ofMillis(DriverSettings.getInstance().interval));
         wait.ignoring(WebDriverException.class);
@@ -38,7 +38,7 @@ public class Waiter {
 
     public WebElement WaitUntilExist(By locator, int divider)
     {
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(),
+        WebDriverWait wait = new WebDriverWait(DriverManager.getWebDriver(),
                 TimeUnit.SECONDS.toSeconds(DriverSettings.getInstance().timeout / divider));
         wait.pollingEvery(Duration.ofMillis(DriverSettings.getInstance().interval));
         wait.ignoring(WebDriverException.class);
@@ -49,7 +49,7 @@ public class Waiter {
 
     public WebElement WaitUntilExist(By locator)
     {
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(),
+        WebDriverWait wait = new WebDriverWait(DriverManager.getWebDriver(),
                 TimeUnit.SECONDS.toSeconds(DriverSettings.getInstance().timeout / DIVIDER));
         wait.pollingEvery(Duration.ofMillis(DriverSettings.getInstance().interval));
         wait.ignoring(WebDriverException.class);

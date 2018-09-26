@@ -7,6 +7,6 @@ public class Navigate extends Waiter
 
     public void goTo(String url)
     {
-        DriverManager.getDriver().navigate().to(url);
+        DriverManager.getWebDriver().navigate().to(url);
     }
 }
