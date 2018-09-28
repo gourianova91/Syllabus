@@ -2,7 +2,7 @@ package config;
 
 public class DriverSettings {
 
-    //region Singleton driver initialization
+    //region Singleton driver settings initialization
     private final static ThreadLocal<DriverSettings> instance = ThreadLocal.withInitial( () -> new DriverSettings());
 
     private DriverSettings() {}

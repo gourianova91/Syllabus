@@ -58,6 +58,7 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
     }
 
     /*This belongs to IInvokedMethodListener, It will execute before every method Including @Before @After @Test*/
+    @Override
     public void beforeInvocation(IInvokedMethod method, ITestResult arg1) {
         String textMsg = "About to begin executing following method : " + returnMethodName(method.getTestMethod());
         Reporter.log(textMsg, false);
@@ -69,6 +70,7 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
     }
 
     /*This belongs to IInvokedMethodListener and will execute after every method Including @Before @After @Test*/
+    @Override
     public void afterInvocation(IInvokedMethod method, ITestResult arg1) {
         String textMsg = "Completed executing following method : " + returnMethodName(method.getTestMethod());
         Reporter.log(textMsg, false);

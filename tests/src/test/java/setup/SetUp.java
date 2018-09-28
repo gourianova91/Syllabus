@@ -17,5 +17,4 @@ public class SetUp {
             System.out.println("tearDownMethod. Remove thread id is: " + id);
         }
     }
-
 }
