@@ -1,7 +1,6 @@
 package config;
 
 public class DriverSettings {
-
     //region Singleton driver settings initialization
     private final static ThreadLocal<DriverSettings> instance = ThreadLocal.withInitial( () -> new DriverSettings());
 
@@ -20,7 +19,6 @@ public class DriverSettings {
         return myInstance;
     }
     //endregion
-
 
     public int ajaxWait = 60;
     public int timeout = 40;

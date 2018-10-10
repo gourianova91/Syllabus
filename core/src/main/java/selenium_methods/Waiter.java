@@ -14,26 +14,48 @@ public class Waiter {
 
     private static int DIVIDER = 1;
 
-    public WebElement WaitUntilClickable(By locator, int divider)
+    WebElement WaitUntilClickable(By locator, int divider)
     {
         WebDriverWait wait = new WebDriverWait(DriverManager.getWebDriver(),
                 TimeUnit.SECONDS.toSeconds(DriverSettings.getInstance().timeout / divider));
         wait.pollingEvery(Duration.ofMillis(DriverSettings.getInstance().interval));
-        wait.ignoring(WebDriverException.class);
+        wait.ignoring(TimeoutException.class);
         wait.ignoring(NoSuchElementException.class);
         wait.ignoring(StaleElementReferenceException.class);
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
-    public WebElement WaitUntilClickable(By locator)
+    WebElement WaitUntilClickable(By locator)
     {
         WebDriverWait wait = new WebDriverWait(DriverManager.getWebDriver(),
                 TimeUnit.SECONDS.toSeconds(DriverSettings.getInstance().timeout / DIVIDER));
         wait.pollingEvery(Duration.ofMillis(DriverSettings.getInstance().interval));
-        wait.ignoring(WebDriverException.class);
+        wait.ignoring(TimeoutException.class);
         wait.ignoring(NoSuchElementException.class);
         wait.ignoring(StaleElementReferenceException.class);
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
+
+    WebElement WaitUntilClickable(WebElement element)
+    {
+        WebDriverWait wait = new WebDriverWait(DriverManager.getWebDriver(),
+                TimeUnit.SECONDS.toSeconds(DriverSettings.getInstance().timeout / DIVIDER));
+        wait.pollingEvery(Duration.ofMillis(DriverSettings.getInstance().interval));
+        wait.ignoring(TimeoutException.class);
+        wait.ignoring(NoSuchElementException.class);
+        wait.ignoring(StaleElementReferenceException.class);
+        return wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    WebElement WaitUntilClickable(WebElement element, int divider)
+    {
+        WebDriverWait wait = new WebDriverWait(DriverManager.getWebDriver(),
+                TimeUnit.SECONDS.toSeconds(DriverSettings.getInstance().timeout / divider));
+        wait.pollingEvery(Duration.ofMillis(DriverSettings.getInstance().interval));
+        wait.ignoring(TimeoutException.class);
+        wait.ignoring(NoSuchElementException.class);
+        wait.ignoring(StaleElementReferenceException.class);
+        return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public WebElement WaitUntilExist(By locator, int divider)
@@ -41,7 +63,7 @@ public class Waiter {
         WebDriverWait wait = new WebDriverWait(DriverManager.getWebDriver(),
                 TimeUnit.SECONDS.toSeconds(DriverSettings.getInstance().timeout / divider));
         wait.pollingEvery(Duration.ofMillis(DriverSettings.getInstance().interval));
-        wait.ignoring(WebDriverException.class);
+        wait.ignoring(TimeoutException.class);
         wait.ignoring(NoSuchElementException.class);
         wait.ignoring(StaleElementReferenceException.class);
         return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -52,9 +74,34 @@ public class Waiter {
         WebDriverWait wait = new WebDriverWait(DriverManager.getWebDriver(),
                 TimeUnit.SECONDS.toSeconds(DriverSettings.getInstance().timeout / DIVIDER));
         wait.pollingEvery(Duration.ofMillis(DriverSettings.getInstance().interval));
-        wait.ignoring(WebDriverException.class);
+        wait.ignoring(TimeoutException .class);
         wait.ignoring(NoSuchElementException.class);
         wait.ignoring(StaleElementReferenceException.class);
         return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
+
+    WebElement WaitUntilExist(WebElement element)
+    {
+        try
+        {
+            if (element.isDisplayed())
+                return element;
+        }
+        catch (NoSuchElementException | StaleElementReferenceException e)
+        {
+            return null;
+        }
+        return null;
+    }
+
+    public WebElement WaitUntilDisplayed(By locator)
+    {
+        WebDriverWait wait = new WebDriverWait(DriverManager.getWebDriver(),
+                TimeUnit.SECONDS.toSeconds(DriverSettings.getInstance().timeout / DIVIDER));
+        wait.pollingEvery(Duration.ofMillis(DriverSettings.getInstance().interval));
+        wait.ignoring(TimeoutException .class);
+        wait.ignoring(NoSuchElementException.class);
+        wait.ignoring(StaleElementReferenceException.class);
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 }

@@ -6,8 +6,18 @@ public class DriverManager {
 
     private final static ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
 
+    private final static Object lock = new Object();
+    private static WebDriver instance = null;
+
     public static synchronized WebDriver getWebDriver() {
-        return webDriver.get();
+        if (instance == null) {
+            synchronized (lock) {
+                if (instance == null) {
+                    instance = webDriver.get();
+                }
+            }
+        }
+        return instance;
     }
 
     public static void setWebDriver(WebDriver driver) {

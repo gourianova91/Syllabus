@@ -22,6 +22,7 @@ public class DriverFactory {
         options.addArguments("--enable-precise-memory-info");
         options.addArguments("--disable-popup-blocking");
         options.addArguments("--disable-default-apps");
+        options.addArguments("--disable-notifications");
         return options;
     }
 
