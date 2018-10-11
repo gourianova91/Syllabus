@@ -13,9 +13,9 @@ import java.util.concurrent.TimeUnit;
 
 public class Events extends AbstractWebDriverEventListener
 {
-    private String JQUERY_WAIT = "if (typeof jQuery !== 'undefined'){return (jQuery.active == 0);} else {return true;}";
-    private String ANGULAR_WAIT = "if (typeof angular !== 'undefined') {return (angular.element(document).injector().get('$http').pendingRequests.length === 0);} else {return true;}";
-    private String DOCUMENT_READY = "return document.readyState == 'complete'";
+    private final static String JQUERY_WAIT = "if (typeof jQuery !== 'undefined'){return (jQuery.active == 0);} else {return true;}";
+    private final static String ANGULAR_WAIT = "if (typeof angular !== 'undefined') {return (angular.element(document).injector().get('$http').pendingRequests.length === 0);} else {return true;}";
+    private final static String DOCUMENT_READY = "return document.readyState == 'complete'";
 
     public void waitForAjax()
     {

@@ -16,7 +16,7 @@ public class DriverManager {
         return getInstance().getDriver();
     }
 
-    public static synchronized DriverManager getInstance()
+    private static synchronized DriverManager getInstance()
     {
         synchronized (lock) {
             if (instance.get() == null) {
