@@ -9,4 +9,9 @@ public class Navigate extends Waiter
     {
         DriverManager.getWebDriver().navigate().to(url);
     }
+
+    public void refresh()
+    {
+        DriverManager.getWebDriver().navigate().refresh();
+    }
 }

@@ -1,8 +1,6 @@
 package listeners;
 
-import driver.DriverFactory;
-import driver.DriverManager;
-import org.openqa.selenium.WebDriver;
+import config.DriverSettings;
 import org.testng.*;
 
 public class TestListener implements ITestListener, ISuiteListener, IInvokedMethodListener
@@ -62,10 +60,13 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
         String textMsg = "About to begin executing following method : " + returnMethodName(method.getTestMethod());
         Reporter.log(textMsg, false);
         if (method.isTestMethod()) {
+            DriverSettings.getInstance().browserName = method.getTestMethod().getXmlTest().getLocalParameters().get("browserName");
+        }
+        /*if (method.isTestMethod()) {
             String browserName = method.getTestMethod().getXmlTest().getLocalParameters().get("browserName");
             WebDriver driver = DriverFactory.createBrowser(browserName);
             DriverManager.setWebDriver(driver);
-        }
+        }*/
     }
 
     /*This belongs to IInvokedMethodListener and will execute after every method Including @Before @After @Test*/
